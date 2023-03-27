@@ -11,6 +11,12 @@
 		"AzureBlobStorageSource_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorageSource1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorageSource1Destination_connectionString": {
+			"value": ""
+		},
 		"containerUri": {
 			"value": ""
 		},
