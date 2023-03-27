@@ -1,0 +1,22 @@
+{
+	"name": "DestinationDataset_wty",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageSource1Destination",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "new_test",
+				"container": "c339"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
