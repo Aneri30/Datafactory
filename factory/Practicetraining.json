@@ -1,0 +1,9 @@
+{
+	"name": "Practicetraining",
+	"location": "germanywestcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fdc9c476-8d0a-4698-a644-fe2b801eb3ed",
+		"tenantId": "7eebb6b5-2fcf-44da-8032-84c9f169dd4d"
+	}
+}
