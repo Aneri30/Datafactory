@@ -1,0 +1,48 @@
+{
+	"name": "SourceDataset_wty",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageSource1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "apple.csv",
+				"container": "c339"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Close/Last",
+				"type": "String"
+			},
+			{
+				"name": "Volume",
+				"type": "String"
+			},
+			{
+				"name": "Open",
+				"type": "String"
+			},
+			{
+				"name": "High",
+				"type": "String"
+			},
+			{
+				"name": "Low",
+				"type": "String"
+			}
+		]
+	}
+}
