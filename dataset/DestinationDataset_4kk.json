@@ -1,0 +1,22 @@
+{
+	"name": "DestinationDataset_4kk",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageDestination",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "test.csv",
+				"container": "c339"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
