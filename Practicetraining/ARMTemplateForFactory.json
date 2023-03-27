@@ -124,7 +124,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"folderPath": "grdc_river",
+						"folderPath": "new_test",
 						"container": "c339"
 					},
 					"columnDelimiter": ",",
