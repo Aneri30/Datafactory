@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "test.csv",
+				"folderPath": "grdc_river",
 				"container": "c339"
 			},
 			"columnDelimiter": ",",
