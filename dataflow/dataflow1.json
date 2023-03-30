@@ -69,6 +69,8 @@
 				"          title = toString(left(title,length(title)-6))) ~> YearExtraction",
 				"YearExtract sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['MoviesFinal.csv'],",
+				"     truncate: true,",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
