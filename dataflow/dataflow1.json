@@ -26,6 +26,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "Movieoutput"
+				},
+				{
+					"dataset": {
+						"referenceName": "Movieoutput",
+						"type": "DatasetReference"
+					},
+					"name": "Movieoutputwithoutgener"
 				}
 			],
 			"transformations": [
@@ -75,7 +82,16 @@
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     partitionBy('hash', 1)) ~> Movieoutput"
+				"     partitionBy('hash', 1)) ~> Movieoutput",
+				"YearExtraction sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['Moviewithoutgener'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> Movieoutputwithoutgener"
 			]
 		}
 	}
