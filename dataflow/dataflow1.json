@@ -27,7 +27,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> Movieinput",
-				"Movieinput derive(Year = toInteger(trim(right(title,6),'()'))) ~> YearExtract"
+				"Movieinput derive(Year = toInteger(trim(right(title,6),'()')),",
+				"          title = toString(left(title,length(title)-6))) ~> YearExtract"
 			]
 		}
 	}
