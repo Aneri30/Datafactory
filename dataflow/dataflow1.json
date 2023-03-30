@@ -58,7 +58,7 @@
 				"          firstletter = ERROR_FUNCTION('')) ~> YearExtract",
 				"Movieinput1 select(mapColumn(",
 				"          movieId,",
-				"          title = movieId",
+				"          title",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> selecttitle",
