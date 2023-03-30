@@ -10,6 +10,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "Movieinput"
+				},
+				{
+					"dataset": {
+						"referenceName": "Movieinput",
+						"type": "DatasetReference"
+					},
+					"name": "Movieinput1"
 				}
 			],
 			"sinks": [
@@ -24,6 +31,9 @@
 			"transformations": [
 				{
 					"name": "YearExtract"
+				},
+				{
+					"name": "selecttitle"
 				}
 			],
 			"scriptLines": [
@@ -35,8 +45,24 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> Movieinput",
+				"source(output(",
+				"          movieId as string,",
+				"          title as string,",
+				"          genres as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Movieinput1",
 				"Movieinput derive(Year = toInteger(trim(right(title,6),'()')),",
-				"          title = toString(left(title,length(title)-6))) ~> YearExtract",
+				"          title = toString(left(title,length(title)-6)),",
+				"          firstletter = ERROR_FUNCTION('')) ~> YearExtract",
+				"Movieinput1 select(mapColumn(",
+				"          movieId,",
+				"          title,",
+				"          genres",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> selecttitle",
 				"YearExtract sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     umask: 0022,",
