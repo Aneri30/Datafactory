@@ -34,6 +34,9 @@
 				},
 				{
 					"name": "selecttitle"
+				},
+				{
+					"name": "YearExtraction"
 				}
 			],
 			"scriptLines": [
@@ -62,6 +65,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> selecttitle",
+				"selecttitle derive(Year = toString(left(title,length(title)-6))) ~> YearExtraction",
 				"YearExtract sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     umask: 0022,",
